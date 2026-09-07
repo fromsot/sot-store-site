@@ -1,0 +1,38 @@
+{
+  "name": "サンプル珈琲店",
+  "slug": "sample-cafe",
+  "catchcopy": "ここに一言キャッチコピーを入れます",
+  "description": "ここに店舗の紹介文を入れます。どんなお店か、こだわりやおすすめポイントを2〜3行程度で書くイメージです。実際の店舗の情報に差し替えて使ってください。",
+  "phone": "03-1234-5678",
+  "address": "東京都〇〇区〇〇1-2-3",
+  "hours": [
+    {
+      "day": "月〜金",
+      "time": "10:00〜19:00"
+    },
+    {
+      "day": "土・日・祝",
+      "time": "10:00〜18:00"
+    }
+  ],
+  "closed": "毎週水曜日",
+  "links": {
+    "google_map": "https://maps.google.com/?q=東京都",
+    "instagram": "https://www.instagram.com/",
+    "line": "https://line.me/",
+    "reservation": "https://example-reservation-service.com/"
+  },
+  "theme": {
+    "primary_color": "#6b4a33",
+    "background_color": "#faf6f1",
+    "accent_color": "#c98a4b"
+  },
+  "images": {
+    "hero": "images/sample-cafe/hero.jpg",
+    "gallery": [
+      "images/sample-cafe/photo1.jpg",
+      "images/sample-cafe/photo2.jpg",
+      "images/sample-cafe/photo3.jpg"
+    ]
+  }
+}

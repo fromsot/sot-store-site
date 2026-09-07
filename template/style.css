@@ -1,0 +1,234 @@
+/* SOT|店舗Webサポート 共通テンプレート スタイル
+   店舗ごとの色は index.html 内の ##THEME_STYLE## で上書きされます。
+   スマートフォン表示を基準に作り、大きい画面用の調整は下部の @media で行っています。 */
+
+:root {
+  --primary-color: #6b4a33;
+  --bg-color: #faf6f1;
+  --accent-color: #c98a4b;
+  --text-color: #2c2c2c;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", "Yu Gothic", sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+h1, h2 {
+  line-height: 1.4;
+}
+
+/* ---------- ヒーロー（先頭部分） ---------- */
+
+.hero {
+  position: relative;
+  min-height: 56vw;
+  max-height: 480px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--primary-color);
+  color: #ffffff;
+  overflow: hidden;
+}
+
+.hero img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+}
+
+.hero .photo-placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-text {
+  position: relative;
+  padding: 24px 20px;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+.hero-text .catchcopy {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------- 共通セクション ---------- */
+
+.section {
+  padding: 32px 20px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 1.15rem;
+  color: var(--primary-color);
+  border-left: 4px solid var(--accent-color);
+  padding-left: 10px;
+  margin-bottom: 16px;
+}
+
+/* ---------- ボタン群（LINE・地図・Instagram・予約） ---------- */
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  background: var(--primary-color);
+}
+
+.btn.accent {
+  background: var(--accent-color);
+}
+
+.text-link {
+  text-decoration: underline;
+}
+
+/* ---------- 営業時間 ---------- */
+
+.hours-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.hours-table td {
+  padding: 8px 4px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.hours-table td.day {
+  font-weight: 700;
+  width: 40%;
+}
+
+.closed {
+  margin-top: 12px;
+  color: #555555;
+}
+
+/* ---------- アクセス ---------- */
+
+.address {
+  margin-bottom: 8px;
+}
+
+/* ---------- ギャラリー ---------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.gallery-grid img,
+.gallery-grid .photo-placeholder {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.photo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.06),
+    rgba(0, 0, 0, 0.06) 10px,
+    rgba(0, 0, 0, 0.03) 10px,
+    rgba(0, 0, 0, 0.03) 20px
+  );
+  color: #777777;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+/* ---------- フッター ---------- */
+
+footer {
+  padding: 28px 20px 40px;
+  text-align: center;
+  background: #ffffff;
+  color: #555555;
+  font-size: 0.85rem;
+}
+
+.footer-name {
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 4px;
+}
+
+.footer-detail {
+  margin-bottom: 12px;
+}
+
+.powered {
+  font-size: 0.75rem;
+  color: #999999;
+}
+
+/* ---------- タブレット・PCなど、大きい画面向けの調整 ---------- */
+
+@media (min-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-text .catchcopy {
+    font-size: 1.1rem;
+  }
+
+  .button-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    flex: 1 1 auto;
+    min-width: 160px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
